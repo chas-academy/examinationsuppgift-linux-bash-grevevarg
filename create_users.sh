@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# stoppar non-root execution
 if ! [ $(id -u) == 0 ]; then
   echo "script must run as root"
   exit 1
@@ -25,7 +26,7 @@ DOCDIR="Documents/"
 DOWNDIR="Downloads/"
 WORKDIR="Work/"
 
-# skapar användarens hem-mapp
+# skapar subfolders i användarens $HOME
 userdirs_create() {
   username=$1
   basepath="/home/$username"
